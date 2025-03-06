@@ -10,12 +10,12 @@ export class Gift {
 
   get giftTemplate() {
     return `
-      <div onclick="app.giftsController.openGift('${this.id}')" class="col-4">
-        <div class="card m-3 border border-indigo border-4">
+      <div role="button" onclick="app.giftsController.openGift('${this.id}')" class="col-4">
+        <div class="card m-3 border border-indigo border-4 shadow">
           <img
             src="${this.url}"
-            alt="doenst matter right now">
-          <p class="text-center pt-2">
+            alt="a gif captioned: ${this.tag}">
+          <p class="text-center pt-2 px-3">
             ${this.tag}
           </p>
         </div>

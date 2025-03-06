@@ -9,6 +9,12 @@ main {
   flex-grow: 1;
 }
 
+.card img {
+  object-fit: cover;
+  object-position: center;
+  height: 33dvh;
+}
+
 #pop-toast-container {
   display: flex;
   flex-direction: column;

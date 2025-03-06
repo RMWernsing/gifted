@@ -41,6 +41,19 @@
             </div> -->
           </div>
         </div>
+        <div class="col-md-3">
+          <div class="mt-3">
+            <h2>Create a Gif(t)</h2>
+            <form onsubmit="app.giftsController.addGift()">
+              <label class="d-block mb-1" for="tag">Tag your gif</label>
+              <input id="tag" name="tag" type="text" maxlength="120" class="w-100 mb-2" required>
+              <label class="d-block mb-1" for="url">Image URL</label>
+              <input id="url" name="url" type="url" maxlength="500" class="w-100 mb-2" required>
+              <button class="btn btn-danger" type="reset">Reset</button>
+              <button class="btn btn-indigo" type="submit">Submit</button>
+            </form>
+          </div>
+        </div>
       </div>
 
   </main>
