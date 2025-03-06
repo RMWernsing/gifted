@@ -5,6 +5,8 @@ import { Pop } from "../utils/Pop.js";
 export class GiftsController {
   constructor() {
     AppState.on('identity', this.getGiftList)
+    AppState.on('gifts', this.drawGiftCard)
+
     console.log("controller is working");
   }
 
@@ -16,6 +18,14 @@ export class GiftsController {
       Pop.error(error, 'Could not get Gift List')
 
     }
+  }
+
+  drawGiftCard() {
+    const gifts = AppState.gifts
+    let giftsContent = ''
+    gifts.forEach(gift => giftsContent += gift.giftTemplate)
+    const giftCardElem = document.getElementById('giftList')
+    giftCardElem.innerHTML = giftsContent
   }
 
 }

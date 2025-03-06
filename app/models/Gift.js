@@ -10,7 +10,16 @@ export class Gift {
 
   get giftTemplate() {
     return `
-    <p>${this.tag}</p>
+      <div class="col-4">
+        <div class="card m-3 border border-indigo border-4">
+          <img
+            src="${this.url}"
+            alt="doenst matter right now">
+          <p class="text-center pt-2">
+            ${this.tag}
+          </p>
+        </div>
+      </div>
     `
   }
 }
