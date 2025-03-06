@@ -10,6 +10,14 @@ export class GiftsController {
     console.log("controller is working");
   }
 
+  drawGiftCard() {
+    const gifts = AppState.gifts
+    let giftsContent = ''
+    gifts.forEach(gift => giftsContent += gift.giftTemplate)
+    const giftCardElem = document.getElementById('giftList')
+    giftCardElem.innerHTML = giftsContent
+  }
+
   async getGiftList() {
     try {
       await giftsService.getGiftsList()
@@ -20,12 +28,14 @@ export class GiftsController {
     }
   }
 
-  drawGiftCard() {
-    const gifts = AppState.gifts
-    let giftsContent = ''
-    gifts.forEach(gift => giftsContent += gift.giftTemplate)
-    const giftCardElem = document.getElementById('giftList')
-    giftCardElem.innerHTML = giftsContent
+  async openGift(giftsId) {
+    try {
+      await giftsService.openGifts(giftsId)
+    } catch (error) {
+      console.error('COULD NOT OPEN GIFT', error);
+      Pop.error(error, 'Could not open gift')
+    }
   }
+
 
 }

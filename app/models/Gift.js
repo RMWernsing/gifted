@@ -10,7 +10,7 @@ export class Gift {
 
   get giftTemplate() {
     return `
-      <div class="col-4">
+      <div onclick="app.giftsController.openGift('${this.id}')" class="col-4">
         <div class="card m-3 border border-indigo border-4">
           <img
             src="${this.url}"
