@@ -15,6 +15,10 @@ main {
   height: 33dvh;
 }
 
+.card:hover {
+  border-color: var(#0d3b08) !important;
+}
+
 #pop-toast-container {
   display: flex;
   flex-direction: column;
